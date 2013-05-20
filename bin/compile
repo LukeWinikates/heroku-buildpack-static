@@ -15,9 +15,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
-echo "build dir"
-ls $BUILD_DIR
-
 # include .files when moving things around
 shopt -s dotglob
 
@@ -27,9 +24,6 @@ cd $BUILD_DIR
 mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www/site ./www
-
-pwd
-ls www
 
 # keep Procfile
 if [ -f www/Procfile ]; then
@@ -51,12 +45,6 @@ if [ ! -d $APACHE_PATH ]; then
   curl --silent --max-time 60 --location $APACHE_URL | tar xz
 fi
 
-echo "before cat"
-pwd
-
-echo "\n\n"
-echo "www/"
-ls www
 cat >>boot.sh <<EOF
 export LD_LIBRARY_PATH=/app/apache/lib/
 /app/apache/bin/htpasswd -bc /app/.passwords \$USERNAME \$PASSWORD
