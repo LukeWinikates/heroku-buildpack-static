@@ -10,8 +10,8 @@ APACHE_PATH="apache"
 PHP_VERSION="5.3.6"
 PHP_PATH="php"
 
-BIN_DIR=$(dirname $0)/site
-BUILD_DIR=$1
+BIN_DIR=$(dirname $0)
+BUILD_DIR=$1/site
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
