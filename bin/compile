@@ -15,8 +15,8 @@ BUILD_DIR=$1/site
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
-echo "bin dir"
-echo ls $BIN_DIR
+echo "build dir"
+echo ls $build_DIR
 
 # include .files when moving things around
 shopt -s dotglob
@@ -28,8 +28,8 @@ mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
 
-echo $(pwd)
-echo ls
+pwd
+ls
 
 # keep Procfile
 if [ -f www/Procfile ]; then
