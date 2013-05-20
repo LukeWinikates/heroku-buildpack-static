@@ -53,7 +53,10 @@ fi
 
 echo "before cat"
 pwd
-ls
+
+echo "\n\n"
+echo "www/"
+ls www
 cat >>boot.sh <<EOF
 export LD_LIBRARY_PATH=/app/apache/lib/
 /app/apache/bin/htpasswd -bc /app/.passwords \$USERNAME \$PASSWORD
